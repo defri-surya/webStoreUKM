@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [WelcomeController::class, 'homepage']);
+Route::get('/product', [WelcomeController::class, 'product']);
+Route::get('/detail-product', [WelcomeController::class, 'detailProduct']);
+Route::get('/your-cart', [WelcomeController::class, 'cart']);
+Route::get('/order', [WelcomeController::class, 'order']);
+Route::get('/list-ukm', [WelcomeController::class, 'list_ukm']);
